@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premio dell'Esploratore - Animali della Giungla</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>🌴 Complimenti, Giovane Esploratore! 🌴</h1>
+        <p class="subtitle">Hai completato il libro! Ecco il tuo premio speciale!</p>
+        <div class="owl">🦉 Gufo Saggio è orgoglioso di te!</div>
+    </header>
+
+    <!-- Sezione 1: Certificato -->
+    <section class="certificate-section">
+        <h2>📜 Il Tuo Certificato</h2>
+        <div class="certificate-form">
+            <label for="name">Inserisci il tuo nome:</label>
+            <input type="text" id="name" placeholder="Es: Marco">
+            <button onclick="generateCertificate()">🏆 Genera Certificato</button>
+        </div>
+        
+        <!-- Certificato generato (nascosto inizialmente) -->
+        <div id="certificate" class="certificate hidden">
+            <h3>🏆 CERTIFICATO UFFICIALE 🏆</h3>
+            <p>Questo certifica che</p>
+            <p class="cert-name" id="certName"></p>
+            <p>ha completato con successo</p>
+            <p class="cert-title">TROVA LE DIFFERENZE<br>Animali della Giungla</p>
+            <p>ed è ora un <strong>Esploratore Certificato della Giungla!</strong></p>
+            <p class="cert-date" id="certDate"></p>
+            <button onclick="downloadCertificate()">📥 Scarica Certificato</button>
+        </div>
+    </section>
+
+    <!-- Sezione 2: Galleria Versi -->
+    <section class="sounds-section">
+        <h2>🔊 Ascolta i Versi degli Animali!</h2>
+        <p class="instruction">Clicca su ogni animale per sentire il suo verso!</p>
+        
+        <div class="animals-grid">
+            <div class="animal-card" onclick="playSound('leone')">
+                <div class="animal-emoji">🦁</div>
+                <p>Leone</p>
+            </div>
+            <div class="animal-card" onclick="playSound('scimmia')">
+                <div class="animal-emoji">🐵</div>
+                <p>Scimmia</p>
+            </div>
+            <div class="animal-card" onclick="playSound('elefante')">
+                <div class="animal-emoji">🐘</div>
+                <p>Elefante</p>
+            </div>
+            <div class="animal-card" onclick="playSound('tigre')">
+                <div class="animal-emoji">🐯</div>
+                <p>Tigre</p>
+            </div>
+            <div class="animal-card" onclick="playSound('bradipo')">
+                <div class="animal-emoji">🦥</div>
+                <p>Bradipo</p>
+            </div>
+            <div class="animal-card" onclick="playSound('camaleonte')">
+                <div class="animal-emoji">🦎</div>
+                <p>Camaleonte</p>
+            </div>
+            <div class="animal-card" onclick="playSound('serpente')">
+                <div class="animal-emoji">🐍</div>
+                <p>Serpente</p>
+            </div>
+            <div class="animal-card" onclick="playSound('pappagallo')">
+                <div class="animal-emoji">🦜</div>
+                <p>Pappagallo</p>
+            </div>
+            <div class="animal-card" onclick="playSound('tucano')">
+                <div class="animal-emoji">🦤</div>
+                <p>Tucano</p>
+            </div>
+            <div class="animal-card" onclick="playSound('coccodrillo')">
+                <div class="animal-emoji">🐊</div>
+                <p>Coccodrillo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione 3: Download PDF -->
+    <section class="download-section">
+        <h2>📥 Il Tuo Kit dell'Esploratore</h2>
+        <p>Scarica pagine da colorare e attività extra!</p>
+        <a href="assets/downloads/kit-esploratore.pdf" download class="download-btn">
+            📦 Scarica Kit (PDF)
+        </a>
+    </section>
+
+    <!-- Sezione 4: Sondaggio -->
+    <section class="survey-section">
+        <h2>⭐ Ti è piaciuto il libro?</h2>
+        <p>Aiutaci a migliorare! Quanto ti è piaciuto?</p>
+        
+        <div class="stars" id="stars">
+            <span class="star" onclick="rate(1)">☆</span>
+            <span class="star" onclick="rate(2)">☆</span>
+            <span class="star" onclick="rate(3)">☆</span>
+            <span class="star" onclick="rate(4)">☆</span>
+            <span class="star" onclick="rate(5)">☆</span>
+        </div>
+        
+        <textarea id="feedback" placeholder="Racconta cosa ti è piaciuto di più! (opzionale)" rows="4"></textarea>
+        <button onclick="submitFeedback()">📨 Invia Feedback</button>
+        
+        <div id="thankYou" class="hidden">
+            <p>🎉 Grazie per il tuo feedback! 🦉</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>🌴 Continua l'avventura con i prossimi volumi! 🌴</p>
+        <p><a href="https://amazon.it/..." target="_blank">Scopri gli altri libri della serie →</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
