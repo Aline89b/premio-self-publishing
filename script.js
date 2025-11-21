@@ -1,4 +1,4 @@
-// Certificato
+/* Certificato
 function generateCertificate() {
     const name = document.getElementById('name').value.trim();
     
@@ -29,35 +29,45 @@ function downloadCertificate() {
     // Opzione 2: Screenshot manuale
     alert('Fai uno screenshot del certificato per salvarlo! 📸\n\n(Su Android: Volume giù + Power)\n(Su iPhone: Volume su + Power)');
 }
-
+*/
 // Versi animali
 const sounds = {};
-
-// Precarica i suoni
 const animals = ['leone', 'scimmia', 'elefante', 'tigre', 'bradipo', 
                 'camaleonte', 'serpente', 'pappagallo', 'tucano', 'coccodrillo'];
 
+// Precarica i suoni
 animals.forEach(animal => {
     sounds[animal] = new Audio(`assets/sounds/${animal}.mp3`);
 });
 
 function playSound(animal) {
     // Ferma tutti gli altri suoni
-    Object.values(sounds).forEach(sound => sound.pause());
+    Object.values(sounds).forEach(sound => {
+        sound.pause();
+        sound.currentTime = 0;
+    });
     
-    // Riavvolgi e riproduci
-    sounds[animal].currentTime = 0;
+    // Trova la card dell'animale
+    const card = document.querySelector(`[data-animal="${animal}"]`);
+    
+    // Rimuovi classe playing da tutte le card
+    document.querySelectorAll('.animal-card').forEach(c => {
+        c.classList.remove('playing');
+    });
+    
+    // Aggiungi classe playing alla card corrente
+    card.classList.add('playing');
+    
+    // Riproduci suono
     sounds[animal].play();
     
-    // Animazione visiva
-    const card = event.currentTarget;
-    card.style.background = 'linear-gradient(135deg, #56ab2f 0%, #3d7a1f 100%)';
-    card.style.color = 'white';
-    
+    // Rimuovi classe dopo animazione
     setTimeout(() => {
-        card.style.background = '';
-        card.style.color = '';
-    }, 1000);
+        card.classList.remove('playing');
+    }, 600);
+    
+    // Log per debug (opzionale)
+    console.log(`🔊 Riproduzione: ${animal}`);
 }
 
 // Sondaggio

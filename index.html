@@ -13,92 +13,109 @@
         <p class="subtitle">Hai completato il libro! Ecco il tuo premio speciale!</p>
         <div class="owl">🦉 Gufo Saggio è orgoglioso di te!</div>
     </header>
-
-    <!-- Sezione 1: Certificato -->
-    <section class="certificate-section">
-        <h2>📜 Il Tuo Certificato</h2>
-        <div class="certificate-form">
-            <label for="name">Inserisci il tuo nome:</label>
-            <input type="text" id="name" placeholder="Es: Marco">
-            <button onclick="generateCertificate()">🏆 Genera Certificato</button>
-        </div>
-        
-        <!-- Certificato generato (nascosto inizialmente) -->
-        <div id="certificate" class="certificate hidden">
-            <h3>🏆 CERTIFICATO UFFICIALE 🏆</h3>
-            <p>Questo certifica che</p>
-            <p class="cert-name" id="certName"></p>
-            <p>ha completato con successo</p>
-            <p class="cert-title">TROVA LE DIFFERENZE<br>Animali della Giungla</p>
-            <p>ed è ora un <strong>Esploratore Certificato della Giungla!</strong></p>
-            <p class="cert-date" id="certDate"></p>
-            <button onclick="downloadCertificate()">📥 Scarica Certificato</button>
-        </div>
-    </section>
-
-    <!-- Sezione 2: Galleria Versi -->
-    <section class="sounds-section">
-        <h2>🔊 Ascolta i Versi degli Animali!</h2>
-        <p class="instruction">Clicca su ogni animale per sentire il suo verso!</p>
-        
-        <div class="animals-grid">
-            <div class="animal-card" onclick="playSound('leone')">
-                <div class="animal-emoji">🦁</div>
-                <p>Leone</p>
-            </div>
-            <div class="animal-card" onclick="playSound('scimmia')">
-                <div class="animal-emoji">🐵</div>
-                <p>Scimmia</p>
-            </div>
-            <div class="animal-card" onclick="playSound('elefante')">
-                <div class="animal-emoji">🐘</div>
-                <p>Elefante</p>
-            </div>
-            <div class="animal-card" onclick="playSound('tigre')">
-                <div class="animal-emoji">🐯</div>
-                <p>Tigre</p>
-            </div>
-            <div class="animal-card" onclick="playSound('bradipo')">
-                <div class="animal-emoji">🦥</div>
-                <p>Bradipo</p>
-            </div>
-            <div class="animal-card" onclick="playSound('camaleonte')">
-                <div class="animal-emoji">🦎</div>
-                <p>Camaleonte</p>
-            </div>
-            <div class="animal-card" onclick="playSound('serpente')">
-                <div class="animal-emoji">🐍</div>
-                <p>Serpente</p>
-            </div>
-            <div class="animal-card" onclick="playSound('pappagallo')">
-                <div class="animal-emoji">🦜</div>
-                <p>Pappagallo</p>
-            </div>
-            <div class="animal-card" onclick="playSound('tucano')">
-                <div class="animal-emoji">🦤</div>
-                <p>Tucano</p>
-            </div>
-            <div class="animal-card" onclick="playSound('coccodrillo')">
-                <div class="animal-emoji">🐊</div>
-                <p>Coccodrillo</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sezione 3: Download PDF -->
+ <!-- Sezione 3: Download PDF -->
     <section class="download-section">
         <h2>📥 Il Tuo Kit dell'Esploratore</h2>
         <p>Scarica pagine da colorare e attività extra!</p>
-        <a href="assets/downloads/kit-esploratore.pdf" download class="download-btn">
+        <a href="assets/downloads/kit.pdf" download class="download-btn">
             📦 Scarica Kit (PDF)
         </a>
     </section>
+    
+    <!-- Sezione 2: Galleria Versi -->
+    <section class="sounds-section">
+    <h2>🔊 Ascolta i Versi degli Animali!</h2>
+    <p class="instruction">Clicca su ogni animale per sentire il suo verso!</p>
+    
+    <div class="masonry-grid">
+        <div class="animal-card" onclick="playSound('leone')" data-animal="leone">
+            <img src="assets/images/leone.png" alt="Leone">
+            <div class="animal-overlay">
+                <div class="animal-name"> Leone</div>
+                
+            </div>
+        </div>
+
+        <div class="animal-card" onclick="playSound('scimmia')" data-animal="scimmia">
+            <img src="assets/images/scimmia.png" alt="Scimmia">
+            <div class="animal-overlay">
+                <div class="animal-name"> Scimmia</div>
+               
+            </div>
+        </div>
+
+        <div class="animal-card" onclick="playSound('elefante')" data-animal="elefante">
+            <img src="assets/images/elefante.png" alt="Elefante">
+            <div class="animal-overlay">
+                <div class="animal-name"> Elefante</div>
+               
+            </div>
+        </div>
+
+        <div class="animal-card" onclick="playSound('tigre')" data-animal="tigre">
+            <img src="assets/images/tigre.png" alt="Tigre">
+            <div class="animal-overlay">
+                <div class="animal-name"> Tigre</div>
+                
+            </div>
+        </div>
+
+        <div class="animal-card" onclick="playSound('bradipo')" data-animal="bradipo">
+            <img src="assets/images/bradipo.png" alt="Bradipo">
+            <div class="animal-overlay">
+                <div class="animal-name"> Bradipo</div>
+                
+            </div>
+        </div>
+
+        <div class="animal-card" onclick="playSound('camaleonte')" data-animal="camaleonte">
+            <img src="assets/images/camaleonte.png" alt="Camaleonte">
+            <div class="animal-overlay">
+                <div class="animal-name"> Camaleonte</div>
+                
+            </div>
+        </div>
+
+        <div class="animal-card" onclick="playSound('serpente')" data-animal="serpente">
+            <img src="assets/images/serpente.png" alt="Serpente">
+            <div class="animal-overlay">
+                <div class="animal-name"> Serpente</div>
+                
+            </div>
+        </div>
+
+        <div class="animal-card" onclick="playSound('pappagallo')" data-animal="pappagallo">
+            <img src="assets/images/pappagallo.png" alt="Pappagallo">
+            <div class="animal-overlay">
+                <div class="animal-name"> Pappagallo</div>
+                
+            </div>
+        </div>
+
+        <div class="animal-card" onclick="playSound('tucano')" data-animal="tucano">
+            <img src="assets/images/tucano.png" alt="Tucano">
+            <div class="animal-overlay">
+                <div class="animal-name">🦤 Tucano</div>
+                
+            </div>
+        </div>
+
+        <div class="animal-card" onclick="playSound('coccodrillo')" data-animal="coccodrillo">
+            <img src="assets/images/coccodrillo.png" alt="Coccodrillo">
+            <div class="animal-overlay">
+                <div class="animal-name">🐊 Coccodrillo</div>
+                <div class="play-icon">▶</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   
 
     <!-- Sezione 4: Sondaggio -->
     <section class="survey-section">
         <h2>⭐ Ti è piaciuto il libro?</h2>
-        <p>Aiutaci a migliorare! Quanto ti è piaciuto?</p>
-        
+               
         <div class="stars" id="stars">
             <span class="star" onclick="rate(1)">☆</span>
             <span class="star" onclick="rate(2)">☆</span>
@@ -106,10 +123,11 @@
             <span class="star" onclick="rate(4)">☆</span>
             <span class="star" onclick="rate(5)">☆</span>
         </div>
-        
-        <textarea id="feedback" placeholder="Racconta cosa ti è piaciuto di più! (opzionale)" rows="4"></textarea>
-        <button onclick="submitFeedback()">📨 Invia Feedback</button>
-        
+        <div class="survey-section">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeZ88fwy1hj1Cs_8LQNAbzC0QtcRIHZ5jHJ3iBNofVm4ARDxg/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Caricamento…</iframe>
+
+        </div>
+                     
         <div id="thankYou" class="hidden">
             <p>🎉 Grazie per il tuo feedback! 🦉</p>
         </div>
